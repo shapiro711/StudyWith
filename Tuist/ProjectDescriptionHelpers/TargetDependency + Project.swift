@@ -11,20 +11,20 @@ enum AppModule {
     case App
 }
 
-//enum FeatureModules {
-//    
-//}
+enum FeatureModules {
+    case MainFeed
+}
 
 enum CoreModule {
-    case network
+    case Network
 }
 
 enum SharedModule {
-    case thirdPartyLib
+    case ThirdPartyLib
 }
 
 enum userInterfaceModule {
-    case designSystem
+    case DesignSystem
 }
 
 public extension TargetDependency {
@@ -70,6 +70,6 @@ public extension TargetDependency {
     }
     
     static func userInterface(target: String, moduleName: String) -> TargetDependency {
-        .project(target: target, path: .relativeToRoot("Projects/userInterface/\(moduleName)"))
+        .project(target: target, path: .relativeToRoot("Projects/UserInterface/\(moduleName)"))
     }
 }

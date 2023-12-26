@@ -1,8 +1,8 @@
 //
-//  StudyWIthApp.swift
+//  sourcetest.swift
 //  ProjectDescriptionHelpers
 //
-//  Created by shapiro on 12/21/23.
+//  Created by Kim Do hyung on 12/26/23.
 //
 
 import Foundation
@@ -23,7 +23,7 @@ struct ContentView: View {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
-            Text("App Entry Point")
+            Text("Main Feed DemoApp")
         }
         .padding()
     }
