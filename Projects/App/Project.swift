@@ -13,9 +13,8 @@ let project = Project.makeModule(
     platform: .iOS,
     product: .app,
     dependencies: [
-        .project(target: "DesignSystem", path: .relativeToRoot("Projects/DesignSystem")),
-        .project(target: "Network", path: .relativeToRoot("Projects/Network")),
-        .project(target: "ThirdPartyLib", path: .relativeToRoot("Projects/ThirdPartyLib"))
+        .userInterface(target: "DesignSystem", moduleName: "DesignSystem"),
+        .core(target: "Network", moduleName: "Network")
     ],
     resources: ["Resources/**"],
     infoPlist: .extendingDefault(with: [

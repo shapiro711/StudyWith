@@ -2,18 +2,18 @@
 //  Project.swift
 //  ProjectDescriptionHelpers
 //
-//  Created by Kim Do hyung on 12/25/23.
+//  Created by shapiro on 12/21/23.
 //
 
 import ProjectDescription
 import ProjectDescriptionHelpers
 
 let project = Project.makeModule(
-    name: "DesignSystem",
-    product: .staticLibrary,
+    name: "Network",
+    product: .staticFramework,
     dependencies: [
-        .project(target: "ThirdPartyLib", path: .relativeToRoot("Projects/ThirdPartyLib"))
-    ],
+        .shared(target: "ThirdPartyLib", moduleName: "ThirdPartyLib")
+      ],
     resources: ["Resources/**"],
     infoPlist: .default
 )
