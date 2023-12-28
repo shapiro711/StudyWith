@@ -13,7 +13,7 @@ let project = Project.makeModule(
     platform: .iOS,
     product: .app,
     dependencies: [
-        .feature(target: "MainFeed", moduleName: "MainFeed")
+        .featureInterface(target: "MainFeed", moduleName: "MainFeed")
     ],
     resources: ["Resources/**"],
     infoPlist: .extendingDefault(with: [

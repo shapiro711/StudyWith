@@ -87,6 +87,18 @@ public extension Project {
             resources: resources,
             dependencies: dependencies
         )
+        
+        let interFaceTarget = Target(
+            name: "\(name)Interface",
+            platform: platform,
+            product: .staticFramework,
+            bundleId: "\(organizationName).\(name)",
+            deploymentTarget: deploymentTarget,
+            infoPlist: .default,
+            sources: ["Interface/**"],
+            resources: resources,
+            dependencies: [.target(name: name)]
+        )
 
         // Demo App 항상 포함
         let demoAppTarget = Target(
@@ -124,7 +136,7 @@ public extension Project {
             organizationName: organizationName,
             packages: packages,
             settings: settings,
-            targets: [frameworkTarget, demoAppTarget, testTarget],
+            targets: [frameworkTarget, interFaceTarget, demoAppTarget, testTarget],
             schemes: schemes
         )
     }

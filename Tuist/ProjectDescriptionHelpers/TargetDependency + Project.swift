@@ -51,7 +51,6 @@ public extension TargetDependency.Projcet {
     static let designSystem = TargetDependency.project(target: "DesignSystem", path: .relativeToRoot("Projects/UserInterface/DesignSystem"))
 }
 
-
 public extension TargetDependency {
     static func app(target: String, moduleName: String) -> TargetDependency {
         .project(target: target, path: .relativeToRoot("Projects/App/App"))
@@ -59,6 +58,10 @@ public extension TargetDependency {
     
     static func feature(target: String, moduleName: String) -> TargetDependency {
         .project(target: target, path: .relativeToRoot("Projects/Feature/\(moduleName)"))
+    }
+    
+    static func featureInterface(target: String, moduleName: String) -> TargetDependency {
+        .project(target: "\(target)Interface", path: .relativeToRoot("Projects/Feature/\(moduleName)"))
     }
     
     static func core(target: String, moduleName: String) -> TargetDependency {
@@ -73,3 +76,5 @@ public extension TargetDependency {
         .project(target: target, path: .relativeToRoot("Projects/UserInterface/\(moduleName)"))
     }
 }
+
+
