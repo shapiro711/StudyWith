@@ -13,7 +13,9 @@ let project = Project.makeModule(
     platform: .iOS,
     product: .app,
     dependencies: [
-        .featureInterface(target: "MainFeed", moduleName: "MainFeed")
+        .featureInterface(target: "MainFeed", moduleName: "MainFeed"),
+        .featureInterface(target: "Search", moduleName: "Search"),
+        .featureInterface(target: "Profile", moduleName: "Profile")
     ],
     resources: ["Resources/**"],
     infoPlist: .extendingDefault(with: [
