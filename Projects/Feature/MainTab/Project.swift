@@ -9,9 +9,12 @@ import ProjectDescription
 import ProjectDescriptionHelpers
 
 let project = Project.makeFeatureModule(
-    name: "Profile",
+    name: "MainTab",
     product: .staticFramework,
     dependencies: [
+        .featureInterface(.MainFeed),
+        .featureInterface(.Search),
+        .featureInterface(.Profile),
         .userInterface(.DesignSystem),
         .core(.Network)
     ],

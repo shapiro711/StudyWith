@@ -7,14 +7,15 @@
 
 import ProjectDescription
 import ProjectDescriptionHelpers
+import DependencyPlugin
 
 
 let project = Project.makeFeatureModule(
     name: "MainFeed",
     product: .staticFramework,
     dependencies: [
-        .userInterface(target: "DesignSystem", moduleName: "DesignSystem"),
-        .core(target: "Network", moduleName: "Network")
+        .userInterface(.DesignSystem),
+        .core(.Network)
     ],
     resources: ["Resources/**"],
     infoPlist: .default

@@ -1,12 +1,11 @@
 //
-//  Package + ThirdParty.swift
-//  ProjectDescriptionHelpers
+//  Dependency + Package.swift
+//  StudyWith
 //
-//  Created by shapiro on 12/22/23.
+//  Created by Kim Do hyung on 12/30/23.
 //
 
 import ProjectDescription
-import ProjectDescriptionHelpers
 
 public extension Package {
     static let TCA = Package.remote(

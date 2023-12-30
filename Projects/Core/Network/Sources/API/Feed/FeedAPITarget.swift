@@ -31,7 +31,7 @@ extension FeedAPITarget: BaseTargetType {
 
     var task: Task {
         switch self {
-        case .getFeed(let request):
+        case .getFeed:
             return .requestPlain
         }
     }

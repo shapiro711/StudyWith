@@ -1,4 +1,6 @@
 import ProjectDescription
+import ProjectDescriptionHelpers
+import DependencyPlugin
 
 public extension Project {
     static func makeModule(
@@ -85,7 +87,7 @@ public extension Project {
             infoPlist: infoPlist,
             sources: sources,
             resources: resources,
-            dependencies: dependencies
+            dependencies: [.target(name: "\(name)Interface")]
         )
         
         let interFaceTarget = Target(
@@ -97,7 +99,7 @@ public extension Project {
             infoPlist: .default,
             sources: ["Interface/**"],
             resources: resources,
-            dependencies: [.target(name: name)]
+            dependencies: []
         )
 
         // Demo App 항상 포함

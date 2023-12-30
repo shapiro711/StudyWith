@@ -12,8 +12,8 @@ let project = Project.makeModule(
     name: "Network",
     product: .staticFramework,
     dependencies: [
-        .shared(target: "ThirdPartyLib", moduleName: "ThirdPartyLib"),
-        .shared(target: "FoundationUtility", moduleName: "FoundationUtility")
+        .shared(.ThirdPartyLib),
+        .shared(.FoundationUtility)
       ],
     resources: ["Resources/**"],
     infoPlist: .default

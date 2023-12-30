@@ -1,8 +1,8 @@
 //
-//  TargetDependency + SPM.swift
-//  ProjectDescriptionHelpers
+//  Dependency + SPM.swift
+//  StudyWith
 //
-//  Created by shapiro on 12/22/23.
+//  Created by Kim Do hyung on 12/29/23.
 //
 
 import ProjectDescription

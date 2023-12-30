@@ -15,8 +15,8 @@ public struct TestAPIService: BaseNetworkService {
     
     public init() {}
 
-    public func getFeed() async throws -> {
-        let response = try await provider.requestAwait(.getFeed)
-        
-    }
+//    public func getFeed() async throws -> {
+//        let response = try await provider.requestAwait(.getFeed)
+//        
+//    }
 }

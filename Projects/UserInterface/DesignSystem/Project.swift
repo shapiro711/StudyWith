@@ -12,7 +12,7 @@ let project = Project.makeModule(
     name: "DesignSystem",
     product: .staticLibrary,
     dependencies: [
-        .shared(target: "ThirdPartyLib", moduleName: "ThirdPartyLib")
+        .shared(.ThirdPartyLib)
     ],
     resources: ["Resources/**"],
     infoPlist: .default
