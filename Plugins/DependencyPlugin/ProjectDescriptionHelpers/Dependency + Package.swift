@@ -22,4 +22,9 @@ public extension Package {
         url: "https://github.com/onevcat/Kingfisher.git",
         requirement: .upToNextMajor(from: "7.10.0")
     )
+    
+    static let Swinject = Package.remote(
+        url: "https://github.com/Swinject/Swinject",
+        requirement: .upToNextMajor(from: "2.8.4")
+    )
 }

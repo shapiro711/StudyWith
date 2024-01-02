@@ -87,7 +87,9 @@ public extension Project {
             infoPlist: infoPlist,
             sources: sources,
             resources: resources,
-            dependencies: [.target(name: "\(name)Interface")]
+            dependencies: [.target(name: "\(name)Interface"),
+                           .core(.Network),
+                           .userInterface(.DesignSystem)]
         )
         
         let interFaceTarget = Target(

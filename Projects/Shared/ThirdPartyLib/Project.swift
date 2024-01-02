@@ -14,12 +14,14 @@ let project = Project.makeModule(
     packages: [
         Package.Moya,
         Package.TCA,
-        Package.Kingfisher
+        Package.Kingfisher,
+        Package.Swinject
     ],
     dependencies: [
         .package(product: "Moya"),
         .package(product: "ComposableArchitecture"),
-        .package(product: "Kingfisher")
+        .package(product: "Kingfisher"),
+        .package(product: "Swinject")
     ]
 )
 
