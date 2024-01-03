@@ -12,6 +12,7 @@ let project = Project.makeFeatureModule(
     name: "Profile",
     product: .staticFramework,
     dependencies: [
+        .featureInterface(.Profile),
         .userInterface(.DesignSystem),
         .core(.Network)
     ],

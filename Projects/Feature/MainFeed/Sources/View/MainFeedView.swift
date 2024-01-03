@@ -10,10 +10,10 @@ import SwiftUI
 import MainFeedInterface
 
 struct MainFeedView: View {
-    let flowState = ContentFlowState()
+    let flowState = MainFeedFlowState()
     
     var body: some View {
-        ContentFlowCoordinator(state: flowState, content: content)
+        MainFeedFlowCoordinator(state: flowState, content: content)
     }
     
     @ViewBuilder private func content() -> some View {
@@ -22,4 +22,8 @@ struct MainFeedView: View {
         }
         .navigationBarTitle("MainFeed", displayMode: .inline)
     }
+}
+
+#Preview {
+    MainFeedView()
 }

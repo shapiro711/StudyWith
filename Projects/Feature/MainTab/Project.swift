@@ -12,6 +12,7 @@ let project = Project.makeFeatureModule(
     name: "MainTab",
     product: .staticFramework,
     dependencies: [
+        .featureInterface(.MainTab),
         .featureInterface(.MainFeed),
         .featureInterface(.Search),
         .featureInterface(.Profile),

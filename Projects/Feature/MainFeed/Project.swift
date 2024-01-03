@@ -14,6 +14,7 @@ let project = Project.makeFeatureModule(
     name: "MainFeed",
     product: .staticFramework,
     dependencies: [
+        .featureInterface(.MainFeed),
         .userInterface(.DesignSystem),
         .core(.Network)
     ],

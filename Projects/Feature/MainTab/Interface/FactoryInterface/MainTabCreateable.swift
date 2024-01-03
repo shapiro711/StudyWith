@@ -10,5 +10,5 @@ import Foundation
 import SwiftUI
 
 public protocol MainTabCreateable {
-    func makeMainTabView() -> ContentFlowCoordinator<AnyView>
+    func makeMainTabCoordinator() -> MainTabFlowCoordinator<AnyView>
 }

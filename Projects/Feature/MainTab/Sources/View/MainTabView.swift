@@ -11,7 +11,7 @@ import ComposableArchitecture
 import MainTabInterface
 
 public struct MainTabView: View {
-    let flowState = ContentFlowState()
+    let flowState = MainTabFlowState()
     let store: StoreOf<MainTabFeature>
     @ObservedObject var viewStore: ViewStoreOf<MainTabFeature>
     
@@ -21,7 +21,7 @@ public struct MainTabView: View {
     }
     
     public var body: some View {
-        ContentFlowCoordinator(state: flowState, content: content)
+        MainTabFlowCoordinator(state: flowState, content: content)
     }
 
     @ViewBuilder private func content() -> some View {
@@ -29,17 +29,17 @@ public struct MainTabView: View {
             TabView {
                 Text(viewStore.state.description)
                     .tabItem {
-                        Image(systemName: "1.square.fill")
+//                        Image(systemName: "1.square.fill")
                         Text("First")
                     }
                 Text("Another Tab")
                     .tabItem {
-                        Image(systemName: "2.square.fill")
+//                        Image(systemName: "2.square.fill")
                         Text("Second")
                     }
                 Text("The Last Tab")
                     .tabItem {
-                        Image(systemName: "3.square.fill")
+//                        Image(systemName: "3.square.fill")
                         Text("Third")
                     }
                     .badge(10)
@@ -50,6 +50,6 @@ public struct MainTabView: View {
     }
 }
 
-//#Preview {
-//    MainTabView(store: <#StoreOf<MainTabFeature>#>)
-//}
+#Preview {
+    MainTabView(store: MainTabFeature.createStore())
+}

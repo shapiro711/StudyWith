@@ -10,18 +10,30 @@ import SwiftUI
 import Dependencies
 import Swinject
 
-import MainTabInterface
 import MainTab
-import MainFeedInterface
+import MainTabInterface
 import MainFeed
+import MainFeedInterface
 
 @main
 struct TestestApp: App {
-    let diContainer = DIContainer()
+    static let container = Container()
+    let assembler = Assembler([
+         MainTabAssembly(),
+         MainFeedAssembly()
+    ], container: TestestApp.container)
     
     var body: some Scene {
         WindowGroup {
-            diContainer.mainTabFactory.makeMainTabView()
+            MainFeedViewBuilder()
+        }
+    }
+    @ViewBuilder
+    private func MainFeedViewBuilder() -> some View {
+        if let mainFeedView = TestestApp.container.resolve(MainFeedCreateable.self)?.makeMainFeedCoordinator() {
+            mainFeedView
+        } else {
+            Text("Dependency resolution failed")
         }
     }
 }
@@ -52,10 +64,4 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-}
-
-
-final class DIContainer {
-    let mainTabFactory: MainTabCreateable = MainTabFactory()
-    let mainFeedFactory: MainFeedCreateable = MainFeedFactory()
 }

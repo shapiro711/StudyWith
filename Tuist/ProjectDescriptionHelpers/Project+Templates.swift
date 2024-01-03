@@ -87,9 +87,7 @@ public extension Project {
             infoPlist: infoPlist,
             sources: sources,
             resources: resources,
-            dependencies: [.target(name: "\(name)Interface"),
-                           .core(.Network),
-                           .userInterface(.DesignSystem)]
+            dependencies: dependencies
         )
         
         let interFaceTarget = Target(
@@ -107,11 +105,15 @@ public extension Project {
         // Demo App 항상 포함
         let demoAppTarget = Target(
             name: "\(name)DemoApp",
-            platform: platform,
+            platform: .iOS,
             product: .app,
             bundleId: "\(organizationName).\(name)DemoApp",
             deploymentTarget: deploymentTarget,
-            infoPlist: .default,
+            infoPlist: .extendingDefault(with: [
+                "UIMainStoryboardFile": "",
+                "UILaunchStoryboardName": "LaunchScreen",
+                "ENABLE_TESTS": .boolean(true),
+            ]),
             sources: sources,
             resources: resources,
             dependencies: [.target(name: name)]

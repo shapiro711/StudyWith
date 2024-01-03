@@ -10,5 +10,5 @@ import Foundation
 import SwiftUI
 
 public protocol MainFeedCreateable {
-    func makeMainFeedView() -> ContentFlowCoordinator<AnyView>
+    func makeMainFeedCoordinator() -> MainFeedFlowCoordinator<AnyView>
 }

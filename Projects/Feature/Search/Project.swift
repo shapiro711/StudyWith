@@ -13,6 +13,7 @@ let project = Project.makeFeatureModule(
     name: "Search",
     product: .staticFramework,
     dependencies: [
+        .featureInterface(.Search),
         .userInterface(.DesignSystem),
         .core(.Network)
     ],

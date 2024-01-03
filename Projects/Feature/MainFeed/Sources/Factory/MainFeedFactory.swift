@@ -11,10 +11,10 @@ import SwiftUI
 import MainFeedInterface
 
 public class MainFeedFactory: MainFeedCreateable {
-    public func makeMainFeedView() -> ContentFlowCoordinator<AnyView> {
-        let state = ContentFlowState()
+    public func makeMainFeedCoordinator() -> MainFeedFlowCoordinator<AnyView> {
+        let state = MainFeedFlowState()
         let mainFeedView = MainFeedView()
-        return ContentFlowCoordinator(state: state, content: { AnyView(mainFeedView) })
+        return MainFeedFlowCoordinator(state: state, content: { AnyView(mainFeedView) })
     }
     
     public init() { }

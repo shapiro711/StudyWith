@@ -12,7 +12,8 @@ import SwiftUI
 struct MainFeedApp: App {
     var body: some Scene {
         WindowGroup {
-            MainFeedView()
+            MainFeedFactory().makeMainFeedCoordinator()
+//            MainFeedView()
         }
     }
 }

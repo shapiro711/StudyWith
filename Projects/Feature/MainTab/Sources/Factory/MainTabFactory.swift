@@ -10,15 +10,20 @@ import Foundation
 import SwiftUI
 import ComposableArchitecture
 import MainTabInterface
+import MainFeedInterface
 
 public class MainTabFactory: MainTabCreateable {
-    public func makeMainTabView() -> ContentFlowCoordinator<AnyView> {
-        let state = ContentFlowState()
-        let store = MainTabFeature.createStore()
-        let mainTabView = MainTabView(store: store)
-        return ContentFlowCoordinator(state: state, content: { AnyView(mainTabView) })
+    private let mainFeedFactory: MainFeedCreateable
+    
+    public init(mainFeedFactory: MainFeedCreateable) {
+        self.mainFeedFactory = mainFeedFactory
     }
     
-    public init() { }
+    public func makeMainTabCoordinator() -> MainTabFlowCoordinator<AnyView> {
+        let state = MainTabFlowState()
+        let store = MainTabFeature.createStore()
+        let mainTabView = MainTabView(store: store)
+        return MainTabFlowCoordinator(state: state, content: { AnyView(mainTabView) })
+    }
 }
 

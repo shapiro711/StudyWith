@@ -9,7 +9,7 @@
 import Foundation
 import SwiftUI
 
-public enum ContentLink: Hashable, Identifiable {
+public enum MainFeedLink: Hashable, Identifiable {
     case sheetLink(item: String)
     case coverLink(item: String)
 
@@ -18,20 +18,20 @@ public enum ContentLink: Hashable, Identifiable {
     }
 }
 
-public class ContentFlowState: ObservableObject {
+public class MainFeedFlowState: ObservableObject {
     @Published var path = NavigationPath()
-    @Published var presentedItem: ContentLink?
-    @Published var coverItem: ContentLink?
+    @Published var presentedItem: MainFeedLink?
+    @Published var coverItem: MainFeedLink?
     
     public init() { }
 }
 
-public struct ContentFlowCoordinator<Content: View>: View {
+public struct MainFeedFlowCoordinator<Content: View>: View {
 
-    @ObservedObject var state: ContentFlowState
+    @ObservedObject var state: MainFeedFlowState
     let content: () -> Content
     
-    public init(state: ContentFlowState,
+    public init(state: MainFeedFlowState,
                 @ViewBuilder content: @escaping () -> Content) {
         self.state = state
         self.content = content
@@ -44,19 +44,19 @@ public struct ContentFlowCoordinator<Content: View>: View {
                     .sheet(item: $state.presentedItem, content: sheetContent)
                     .fullScreenCover(item: $state.coverItem, content: coverContent)
             }
-            .navigationDestination(for: ContentLink.self, destination: linkDestination)
+            .navigationDestination(for: MainFeedLink.self, destination: linkDestination)
             .navigationDestination(for: String.self, destination: customDestination)
         }
     }
 
-    @ViewBuilder private func linkDestination(link: ContentLink) -> some View {
+    @ViewBuilder private func linkDestination(link: MainFeedLink) -> some View {
         switch link {
         default:
             EmptyView()
         }
     }
 
-    @ViewBuilder private func sheetContent(item: ContentLink) -> some View {
+    @ViewBuilder private func sheetContent(item: MainFeedLink) -> some View {
         switch item {
         case let .sheetLink(text):
             EmptyView()
@@ -65,7 +65,7 @@ public struct ContentFlowCoordinator<Content: View>: View {
         }
     }
 
-    @ViewBuilder private func coverContent(item: ContentLink) -> some View {
+    @ViewBuilder private func coverContent(item: MainFeedLink) -> some View {
         switch item {
         case let .coverLink(text):
             EmptyView()

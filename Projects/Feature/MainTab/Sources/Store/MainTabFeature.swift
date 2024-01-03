@@ -12,7 +12,7 @@ import ComposableArchitecture
 
 @Reducer
 struct MainTabFeature {
-    let flowState: ContentFlowState
+    let flowState: MainTabFlowState
     
     struct State: Equatable, Identifiable {
         @BindingState var description = ""
@@ -27,7 +27,7 @@ struct MainTabFeature {
         BindingReducer()
     }
     
-    init(flowState: ContentFlowState) {
+    init(flowState: MainTabFlowState) {
         self.flowState = flowState
     }
 }
@@ -35,7 +35,7 @@ struct MainTabFeature {
 extension MainTabFeature {
     static func createStore() -> StoreOf<MainTabFeature> {
         let initialState = State(id: UUID())
-        let flowState = ContentFlowState()
+        let flowState = MainTabFlowState()
         
         return Store(initialState: initialState) {
             MainTabFeature(flowState: flowState)
