@@ -10,7 +10,7 @@ import ProjectDescriptionHelpers
 
 let project = Project.makeFeatureModule(
     name: "MainTab",
-    product: .staticFramework,
+    product: .staticLibrary,
     dependencies: [
         .featureInterface(.MainTab),
         .featureInterface(.MainFeed),

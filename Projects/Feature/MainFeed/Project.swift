@@ -12,7 +12,7 @@ import DependencyPlugin
 
 let project = Project.makeFeatureModule(
     name: "MainFeed",
-    product: .staticFramework,
+    product: .staticLibrary,
     dependencies: [
         .featureInterface(.MainFeed),
         .userInterface(.DesignSystem),

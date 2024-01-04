@@ -93,7 +93,7 @@ public extension Project {
         let interFaceTarget = Target(
             name: "\(name)Interface",
             platform: platform,
-            product: .staticFramework,
+            product: .framework,
             bundleId: "\(organizationName).\(name)",
             deploymentTarget: deploymentTarget,
             infoPlist: .default,

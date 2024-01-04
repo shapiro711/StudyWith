@@ -11,9 +11,7 @@ import Dependencies
 import Swinject
 
 import MainTab
-import MainTabInterface
 import MainFeed
-import MainFeedInterface
 
 @main
 struct TestestApp: App {
